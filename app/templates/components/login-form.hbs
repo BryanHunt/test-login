@@ -1,0 +1,16 @@
+<form class="login-form">
+  <FormGroup @label="User Name">
+    <InputGroup @placeholder="" @value={{this.userId}} @onChange={{action (mut this.userId)}}/>
+  </FormGroup>
+
+  <FormGroup @label="Password">
+    <InputGroup @placeholder="" @type="password" @value={{this.password}} @onChange={{action (mut this.password)}}/>
+  </FormGroup>
+
+  <div class="login-button">
+    {{!-- Using this button fails --}}
+    <Button @intent="primary" @onClick={{action "login"}}>Login</Button>
+    {{!-- Using this button works --}}
+    <button {{action "login"}}>Login</button>
+  </div>
+</form>
